@@ -83,6 +83,10 @@
       linear-gradient(rgba(10,10,10,.55),rgba(10,10,10,.92)),
       url('img/nube-baja-chispas-1.jpg') center/cover no-repeat fixed;
   }
+  /* En celular el fondo "fixed" se rompe -> usar scroll */
+  @media(max-width:860px){
+    .hero{background-attachment:scroll;background-position:center}
+  }
   .hero-inner{max-width:820px;padding-top:80px}
   .badge{
     display:inline-flex;align-items:center;gap:8px;
@@ -189,12 +193,14 @@
     border:0;background:rgba(255,255,255,.12);color:#fff;font-size:1.8rem;cursor:pointer;transition:.2s}
   .lb-close:hover{background:var(--rojo)}
 
-  /* ---------- VIDEOS ---------- */
+  /* ---------- VIDEOS CARRUSEL ---------- */
   .videos{padding:110px 0;background:var(--negro)}
-  .vid-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
-  .vid-grid video{width:220px;max-width:70vw;border-radius:16px;background:#000;
-    border:1px solid rgba(255,255,255,.08);aspect-ratio:9/16;object-fit:cover;
-    box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .track-vid{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;
+    scroll-snap-type:x mandatory;padding:6px 4px 20px;-ms-overflow-style:none;scrollbar-width:none}
+  .track-vid::-webkit-scrollbar{display:none}
+  .track-vid video{flex:0 0 auto;width:240px;max-width:70vw;scroll-snap-align:center;
+    border-radius:16px;background:#000;border:1px solid rgba(255,255,255,.08);
+    aspect-ratio:9/16;object-fit:cover;box-shadow:0 14px 40px rgba(0,0,0,.5)}
 
   /* ---------- CTA / CONTACTO ---------- */
   .contacto{padding:110px 0;text-align:center;
@@ -339,7 +345,7 @@
       <h2 data-en='Unforgettable <em>moments</em>'>Momentos <em>inolvidables</em></h2>
     </div>
     <div class="carousel reveal">
-      <button class="arrow prev" onclick="slideGal(-1)" aria-label="Anterior">‹</button>
+      <button class="arrow prev" onclick="slide('galTrack',-1)" aria-label="Anterior">‹</button>
       <div class="track" id="galTrack">
         <figure onclick="openLB(this)"><img src="img/nube-baja-chispas-1.jpg" alt="Vals con nube baja" /></figure>
         <figure onclick="openLB(this)"><img src="img/nube-baja-chispas-2.jpg" alt="Nube baja y chispas" /></figure>
@@ -348,7 +354,7 @@
         <figure onclick="openLB(this)"><img src="img/montaje-sonido-salon.jpg" alt="Montaje de sonido" /></figure>
         <figure onclick="openLB(this)"><img src="img/dj-roger-retrato.jpg" alt="DJ Roger" /></figure>
       </div>
-      <button class="arrow next" onclick="slideGal(1)" aria-label="Siguiente">›</button>
+      <button class="arrow next" onclick="slide('galTrack',1)" aria-label="Siguiente">›</button>
     </div>
   </div>
 </section>
@@ -360,13 +366,17 @@
       <span data-en="Live">En vivo</span>
       <h2 data-en='Watch us in <em>action</em>'>Míranos en <em>acción</em></h2>
     </div>
-    <div class="vid-grid">
-      <video class="reveal" src="video/pantalla-led.mp4" controls playsinline preload="metadata"></video>
-      <video class="reveal" src="video/fiesta-laser.mp4" controls playsinline preload="metadata"></video>
-      <video class="reveal" src="video/evento-jardin.mp4" controls playsinline preload="metadata"></video>
-      <video class="reveal" src="video/baile-pista.mp4" controls playsinline preload="metadata"></video>
-      <video class="reveal" src="video/salon-montaje.mp4" controls playsinline preload="metadata"></video>
-      <video class="reveal" src="video/pista-luces.mp4" controls playsinline preload="metadata"></video>
+    <div class="carousel reveal">
+      <button class="arrow prev" onclick="slide('vidTrack',-1)" aria-label="Anterior">‹</button>
+      <div class="track-vid" id="vidTrack">
+        <video src="video/pantalla-led.mp4" controls playsinline preload="metadata"></video>
+        <video src="video/fiesta-laser.mp4" controls playsinline preload="metadata"></video>
+        <video src="video/evento-jardin.mp4" controls playsinline preload="metadata"></video>
+        <video src="video/baile-pista.mp4" controls playsinline preload="metadata"></video>
+        <video src="video/salon-montaje.mp4" controls playsinline preload="metadata"></video>
+        <video src="video/pista-luces.mp4" controls playsinline preload="metadata"></video>
+      </div>
+      <button class="arrow next" onclick="slide('vidTrack',1)" aria-label="Siguiente">›</button>
     </div>
   </div>
 </section>
@@ -432,10 +442,11 @@
     document.getElementById('langBtn').textContent = lang==='en' ? 'ES' : 'EN';
   }
 
-  // Carrusel de galeria
-  function slideGal(dir){
-    const t=document.getElementById('galTrack');
-    const step=t.querySelector('figure').offsetWidth+16;
+  // Carrusel (fotos y videos)
+  function slide(trackId,dir){
+    const t=document.getElementById(trackId);
+    const item=t.querySelector('figure,video');
+    const step=item.offsetWidth+16;
     t.scrollBy({left:dir*step,behavior:'smooth'});
   }
   // Lightbox
