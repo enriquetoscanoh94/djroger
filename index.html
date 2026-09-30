@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DJ Roger — DJ, Sonido y Show de Robot LED | Los Ángeles</title>
+<meta name="description" content="DJ Roger: DJ profesional, sonido, luces, pantalla LED, nube baja, chispas frías y show de robot LED para quinceañeras, bodas y graduaciones en Los Ángeles, CA." />
+<link rel="icon" href="img/logo-djroger.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --negro:#0a0a0a;
+    --negro2:#121212;
+    --rojo:#e11414;
+    --rojo-claro:#ff2d2d;
+    --amarillo:#ffd21a;
+    --blanco:#f5f5f5;
+    --gris:#9a9a9a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--negro);
+    color:var(--blanco);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.5px;text-transform:uppercase}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  section{position:relative}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(10,10,10,.75);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav img{height:46px;width:auto}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .nav ul{display:flex;gap:26px;list-style:none}
+  .nav ul a{font-weight:600;font-size:.9rem;color:var(--blanco);opacity:.85;transition:.2s}
+  .nav ul a:hover{opacity:1;color:var(--amarillo)}
+  .fb-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.88rem;color:var(--blanco);opacity:.9;transition:.2s}
+  .fb-link:hover{opacity:1;color:#1877F2}
+  .fb-link svg{width:20px;height:20px}
+  .lang{
+    background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;
+    padding:7px 14px;border-radius:999px;font-weight:700;font-size:.8rem;cursor:pointer;transition:.2s;font-family:inherit
+  }
+  .lang:hover{border-color:var(--amarillo);color:var(--amarillo)}
+  .nav .cta{
+    background:var(--rojo);padding:10px 20px;border-radius:999px;font-weight:700;font-size:.85rem;
+    box-shadow:0 4px 20px rgba(225,20,20,.4);transition:.2s
+  }
+  .nav .cta:hover{background:var(--rojo-claro);transform:translateY(-2px)}
+  .menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer;z-index:60}
+  @media(max-width:860px){
+    .menu-btn{display:block}
+    .nav-right{
+      display:none;position:absolute;top:64px;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:rgba(10,10,10,.98);backdrop-filter:blur(10px);
+      padding:8px 24px 22px;border-bottom:1px solid rgba(255,255,255,.08)
+    }
+    .nav-right.open{display:flex}
+    .nav ul{flex-direction:column;gap:0;width:100%}
+    .nav ul li{padding:14px 2px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav ul a{font-size:1rem}
+    .fb-link{padding:14px 2px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .fb-link span{display:inline}
+    .lang{margin:16px 0 0;align-self:flex-start}
+    .nav .cta{margin-top:14px;text-align:center;padding:13px 20px;font-size:.95rem}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;
+    background:
+      linear-gradient(rgba(10,10,10,.55),rgba(10,10,10,.92)),
+      url('img/nube-baja-chispas-1.jpg') center/cover no-repeat fixed;
+  }
+  .hero-inner{max-width:820px;padding-top:80px}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,210,26,.12);border:1px solid rgba(255,210,26,.4);
+    color:var(--amarillo);padding:7px 16px;border-radius:999px;
+    font-weight:700;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:22px
+  }
+  .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amarillo);box-shadow:0 0 10px var(--amarillo)}
+  .hero h1{
+    font-size:clamp(2.8rem,8vw,6rem);line-height:.95;
+  }
+  .hero h1 .r{color:var(--rojo-claro)}
+  .hero h1 .y{color:var(--amarillo)}
+  .hero p{font-size:clamp(1rem,2vw,1.25rem);color:#d8d8d8;margin:22px 0 34px;max-width:560px;line-height:1.6}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:999px;
+    font-weight:800;font-size:1rem;cursor:pointer;transition:.2s;border:0
+  }
+  .btn-wa{background:#25D366;color:#04220f;box-shadow:0 8px 30px rgba(37,211,102,.35)}
+  .btn-wa:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,.5)}
+  .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.3);color:#fff}
+  .btn-ghost:hover{border-color:var(--amarillo);color:var(--amarillo)}
+
+  /* ---------- SECTION TITLE ---------- */
+  .stitle{text-align:center;margin-bottom:54px}
+  .stitle span{color:var(--rojo-claro);font-weight:800;letter-spacing:3px;font-size:.85rem;text-transform:uppercase}
+  .stitle h2{font-size:clamp(2rem,5vw,3.4rem);margin-top:10px}
+  .stitle h2 em{color:var(--amarillo);font-style:normal}
+
+  /* ---------- SERVICIOS ---------- */
+  .servicios{padding:110px 0;background:var(--negro2)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  .card{
+    background:linear-gradient(160deg,#1b1b1b,#131313);
+    border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:32px 26px;transition:.25s
+  }
+  .card:hover{transform:translateY(-6px);border-color:rgba(225,20,20,.5);box-shadow:0 20px 40px rgba(0,0,0,.5)}
+  .card .ic{
+    width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-size:1.7rem;
+    background:linear-gradient(135deg,var(--rojo),#8a0d0d);margin-bottom:18px
+  }
+  .card h3{font-size:1.25rem;margin-bottom:8px;letter-spacing:1px}
+  .card p{color:var(--gris);font-size:.94rem;line-height:1.55}
+
+  /* ---------- ROBOT ---------- */
+  .robot{padding:110px 0;overflow:hidden;position:relative;
+    background:radial-gradient(circle at 50% 0%,#1a0202,var(--negro) 60%)}
+  .robot-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .robot-copy .badge{margin-bottom:18px}
+  .robot-copy h2{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1}
+  .robot-copy h2 em{color:var(--amarillo);font-style:normal}
+  .robot-copy p{color:#cfcfcf;font-size:1.08rem;line-height:1.7;margin:20px 0 30px}
+  .robot-copy ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:34px}
+  .robot-copy li{display:flex;align-items:center;gap:12px;font-weight:500}
+  .robot-copy li::before{content:"✦";color:var(--amarillo);font-size:1.1rem}
+  .robot-img{position:relative;display:grid;place-items:center;min-height:520px}
+  .robot-img::after{
+    content:"";position:absolute;width:360px;height:360px;border-radius:50%;
+    background:radial-gradient(circle,rgba(225,20,20,.45),transparent 70%);filter:blur(20px);z-index:0
+  }
+  .robot-img img{
+    position:relative;z-index:1;max-height:600px;width:auto;
+    filter:drop-shadow(0 30px 40px rgba(0,0,0,.6));
+    animation:float 4s ease-in-out infinite
+  }
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+  @media(max-width:860px){
+    .robot-grid{grid-template-columns:1fr;text-align:center}
+    .robot-copy .badge{margin-inline:auto}
+    .robot-copy ul{align-items:center}
+    .robot-img{min-height:auto;order:-1}
+    .robot-img img{max-height:440px}
+  }
+
+  /* ---------- GALERIA CARRUSEL ---------- */
+  .galeria{padding:110px 0;background:var(--negro2)}
+  .carousel{position:relative}
+  .track{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;
+    scroll-snap-type:x mandatory;padding:6px 4px 20px;-ms-overflow-style:none;scrollbar-width:none}
+  .track::-webkit-scrollbar{display:none}
+  .track figure{flex:0 0 auto;width:340px;max-width:80vw;aspect-ratio:4/3;
+    border-radius:16px;overflow:hidden;scroll-snap-align:center;cursor:pointer;position:relative}
+  .track img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .track figure:hover img{transform:scale(1.07)}
+  .arrow{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+    width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;
+    background:var(--rojo);color:#fff;font-size:1.5rem;line-height:1;
+    display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.5);transition:.2s}
+  .arrow:hover{background:var(--rojo-claro);transform:translateY(-50%) scale(1.08)}
+  .arrow.prev{left:-8px}
+  .arrow.next{right:-8px}
+  @media(max-width:600px){.arrow{width:40px;height:40px;font-size:1.2rem}}
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.92);
+    display:none;align-items:center;justify-content:center;padding:24px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:92vw;max-height:88vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+  .lb-close{
+    position:absolute;top:20px;right:24px;width:52px;height:52px;border-radius:50%;
+    border:0;background:rgba(255,255,255,.12);color:#fff;font-size:1.8rem;cursor:pointer;transition:.2s}
+  .lb-close:hover{background:var(--rojo)}
+
+  /* ---------- VIDEOS ---------- */
+  .videos{padding:110px 0;background:var(--negro)}
+  .vid-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+  .vid-grid video{width:220px;max-width:70vw;border-radius:16px;background:#000;
+    border:1px solid rgba(255,255,255,.08);aspect-ratio:9/16;object-fit:cover;
+    box-shadow:0 14px 40px rgba(0,0,0,.5)}
+
+  /* ---------- CTA / CONTACTO ---------- */
+  .contacto{padding:110px 0;text-align:center;
+    background:linear-gradient(160deg,#1a0202,var(--negro))}
+  .contacto h2{font-size:clamp(2.2rem,6vw,4rem);line-height:1}
+  .contacto h2 em{color:var(--amarillo);font-style:normal}
+  .contacto p{color:#cfcfcf;font-size:1.1rem;margin:20px auto 36px;max-width:520px;line-height:1.6}
+  .phone{font-family:'Anton',sans-serif;font-size:clamp(1.8rem,5vw,2.8rem);color:var(--amarillo);letter-spacing:1px}
+  .socials{display:flex;gap:18px;justify-content:center;margin-top:34px}
+  .socials a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+    background:#1e1e1e;border:1px solid rgba(255,255,255,.1);transition:.2s}
+  .socials a:hover{transform:translateY(-4px);border-color:var(--amarillo)}
+  .socials svg{width:24px;height:24px}
+
+  footer{background:var(--negro);border-top:1px solid rgba(255,255,255,.06);padding:34px 0;text-align:center}
+  footer img{height:40px;margin-bottom:14px}
+  footer p{color:var(--gris);font-size:.85rem}
+
+  /* ---------- WHATSAPP FLOTANTE ---------- */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:99;
+    width:62px;height:62px;border-radius:50%;background:#25D366;
+    display:grid;place-items:center;box-shadow:0 8px 30px rgba(37,211,102,.5);
+    animation:pulse 2.2s infinite
+  }
+  .wa-float svg{width:34px;height:34px;fill:#fff}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}
+    70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+  }
+  .reveal{opacity:0;transform:translateY(30px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- ROBOT BAILARIN (scroll) ---------- */
+  .robot-scroll{
+    position:fixed;bottom:18px;left:18px;z-index:98;width:90px;pointer-events:none;
+    filter:drop-shadow(0 8px 14px rgba(0,0,0,.6));
+    animation:dance .6s ease-in-out infinite;
+    animation-play-state:paused;
+    transform-origin:bottom center;
+  }
+  .robot-scroll.dancing{animation-play-state:running}
+  @keyframes dance{
+    0%{transform:rotate(-6deg) translateY(0) scaleY(1)}
+    25%{transform:rotate(0deg) translateY(-10px) scaleY(1.04)}
+    50%{transform:rotate(6deg) translateY(0) scaleY(.97)}
+    75%{transform:rotate(0deg) translateY(-10px) scaleY(1.04)}
+    100%{transform:rotate(-6deg) translateY(0) scaleY(1)}
+  }
+  @media(max-width:600px){.robot-scroll{width:66px;bottom:14px;left:14px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="wrap nav">
+    <a href="#inicio"><img src="img/logo-djroger.png" alt="DJ Roger" /></a>
+    <div class="nav-right" id="navRight">
+      <ul>
+        <li><a href="#servicios" data-en="Services">Servicios</a></li>
+        <li><a href="#robot" data-en="Robot Show">Show de Robot</a></li>
+        <li><a href="#galeria" data-en="Gallery">Galería</a></li>
+        <li><a href="#videos" data-en="Videos">Videos</a></li>
+        <li><a href="#contacto" data-en="Contact">Contacto</a></li>
+      </ul>
+      <a class="fb-link" href="https://www.facebook.com/roger.larios.353" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <span data-en="Follow us">Síguenos</span>
+      </a>
+      <button class="lang" id="langBtn" onclick="toggleLang()">EN</button>
+      <a class="cta" href="https://wa.me/12134542970" target="_blank" rel="noopener" data-en="Book your date">Reservar fecha</a>
+    </div>
+    <button class="menu-btn" onclick="document.getElementById('navRight').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-inner">
+    <span class="badge">Los Ángeles, CA</span>
+    <h1 data-en='Your event with the <span class="r">best sound</span> and a <span class="y">robot show</span>'>Tu evento con el <span class="r">mejor sonido</span> y <span class="y">show de robot</span></h1>
+    <p data-en="Professional DJ, lighting, LED screen, low cloud and cold sparks for quinceañeras, weddings and graduations. We make your night unforgettable.">DJ profesional, iluminación, pantalla LED, nube baja y chispas frías para quinceañeras, bodas y graduaciones. Hacemos que tu noche sea inolvidable.</p>
+    <div class="hero-btns">
+      <a class="btn btn-wa" href="https://wa.me/12134542970" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#04220f"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.87 9.87 0 001.522 5.266l-.999 3.648 3.966-1.211zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#servicios" data-en="See services">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="wrap">
+    <div class="stitle reveal">
+      <span data-en="What we offer">Lo que ofrecemos</span>
+      <h2 data-en='Complete <em>services</em> for your party'>Servicios <em>completos</em> para tu fiesta</h2>
+    </div>
+    <div class="grid">
+      <div class="card reveal"><div class="ic">🎧</div><h3 data-en="DJ & MC">DJ & MC</h3><p data-en="Music for every genre and professional hosting with a microphone throughout your event.">Música para todos los géneros y animación profesional con micrófono durante todo el evento.</p></div>
+      <div class="card reveal"><div class="ic">🔊</div><h3 data-en="Pro Sound">Sonido Pro</h3><p data-en="Pioneer gear and high-power speakers with crystal-clear sound for any hall or backyard.">Equipo Pioneer y bocinas de alta potencia con sonido cristalino para cualquier salón o jardín.</p></div>
+      <div class="card reveal"><div class="ic">💡</div><h3 data-en="Lights & Effects">Luces & Efectos</h3><p data-en="Robotic lights, uplighting and lasers that transform the room to the beat of the music.">Luces robóticas, uplighting y láser que transforman el ambiente al ritmo de la música.</p></div>
+      <div class="card reveal"><div class="ic">📺</div><h3 data-en="LED Screen">Pantalla LED</h3><p data-en="Giant custom screen with the name of the celebrant, photos and messages.">Pantalla gigante personalizada con el nombre del festejado, fotos y mensajes.</p></div>
+      <div class="card reveal"><div class="ic">☁️</div><h3 data-en="Low Cloud">Nube Baja</h3><p data-en="Dancing-on-the-clouds effect for the waltz and first dance: the most magical moment of the night.">Efecto de nube para el vals y primer baile: el momento más mágico de la noche.</p></div>
+      <div class="card reveal"><div class="ic">🎆</div><h3 data-en="Cold Sparks">Chispas Frías</h3><p data-en="Safe indoor cold sparks for grand entrances and special moments.">Chispas frías seguras en interiores para las entradas y momentos especiales.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROBOT -->
+<section class="robot" id="robot">
+  <div class="wrap robot-grid">
+    <div class="robot-copy reveal">
+      <span class="badge" data-en="Most requested">Lo más pedido</span>
+      <h2 data-en='<em>LED Robot</em> Show'>Show de <em>Robot LED</em></h2>
+      <p data-en="The giant glowing robot that lights up the dance floor. It dances, interacts with your guests and fills your event with light and energy. The moment everyone will record.">El robot gigante iluminado que enciende la pista. Baila, interactúa con los invitados y llena tu evento de luz y energía. El momento que todos van a grabar.</p>
+      <ul>
+        <li data-en="Life-size LED robot">Robot LED de tamaño real</li>
+        <li data-en="Dancing and crowd interaction">Baile e interacción con el público</li>
+        <li data-en="Perfect for the entrance or the party hour">Ideal para la entrada o la hora loca</li>
+        <li data-en="Great for viral photos and videos">Perfecto para fotos y videos virales</li>
+      </ul>
+      <a class="btn btn-wa" href="https://wa.me/12134542970?text=Hola%20DJ%20Roger,%20quiero%20info%20del%20show%20de%20robot" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#04220f"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.87 9.87 0 001.522 5.266l-.999 3.648 3.966-1.211zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span data-en="Book the robot">Reservar el robot</span>
+      </a>
+    </div>
+    <div class="robot-img reveal">
+      <img src="img/robot-led.png" alt="Show de robot LED de DJ Roger" />
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="wrap">
+    <div class="stitle reveal">
+      <span data-en="Our events">Nuestros eventos</span>
+      <h2 data-en='Unforgettable <em>moments</em>'>Momentos <em>inolvidables</em></h2>
+    </div>
+    <div class="carousel reveal">
+      <button class="arrow prev" onclick="slideGal(-1)" aria-label="Anterior">‹</button>
+      <div class="track" id="galTrack">
+        <figure onclick="openLB(this)"><img src="img/nube-baja-chispas-1.jpg" alt="Vals con nube baja" /></figure>
+        <figure onclick="openLB(this)"><img src="img/nube-baja-chispas-2.jpg" alt="Nube baja y chispas" /></figure>
+        <figure onclick="openLB(this)"><img src="img/quinceanera-rosa-pista.jpg" alt="Quinceañera en la pista" /></figure>
+        <figure onclick="openLB(this)"><img src="img/pantalla-led-graduacion.jpg" alt="Pantalla LED personalizada" /></figure>
+        <figure onclick="openLB(this)"><img src="img/montaje-sonido-salon.jpg" alt="Montaje de sonido" /></figure>
+        <figure onclick="openLB(this)"><img src="img/dj-roger-retrato.jpg" alt="DJ Roger" /></figure>
+      </div>
+      <button class="arrow next" onclick="slideGal(1)" aria-label="Siguiente">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="videos" id="videos">
+  <div class="wrap">
+    <div class="stitle reveal">
+      <span data-en="Live">En vivo</span>
+      <h2 data-en='Watch us in <em>action</em>'>Míranos en <em>acción</em></h2>
+    </div>
+    <div class="vid-grid">
+      <video class="reveal" src="video/pantalla-led.mp4" controls playsinline preload="metadata"></video>
+      <video class="reveal" src="video/fiesta-laser.mp4" controls playsinline preload="metadata"></video>
+      <video class="reveal" src="video/evento-jardin.mp4" controls playsinline preload="metadata"></video>
+      <video class="reveal" src="video/baile-pista.mp4" controls playsinline preload="metadata"></video>
+      <video class="reveal" src="video/salon-montaje.mp4" controls playsinline preload="metadata"></video>
+      <video class="reveal" src="video/pista-luces.mp4" controls playsinline preload="metadata"></video>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <div class="reveal">
+      <h2 data-en='Ready for your <em>big event</em>?'>¿Listo para tu <em>gran evento</em>?</h2>
+      <p data-en="Save your date today. Message us on WhatsApp and build your custom package.">Aparta tu fecha hoy. Escríbenos por WhatsApp y arma tu paquete a tu medida.</p>
+      <a class="btn btn-wa" href="https://wa.me/12134542970" target="_blank" rel="noopener" style="margin-bottom:24px">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#04220f"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.87 9.87 0 001.522 5.266l-.999 3.648 3.966-1.211zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span data-en="Message us on WhatsApp">Escríbenos por WhatsApp</span>
+      </a>
+      <div class="phone">+1 (213) 454-2970</div>
+      <div class="socials">
+        <a href="https://www.facebook.com/roger.larios.353" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://wa.me/12134542970" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.87 9.87 0 001.522 5.266l-.999 3.648 3.966-1.211zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-djroger.png" alt="DJ Roger" />
+    <p data-en="© 2026 DJ Roger — Los Angeles, CA · All rights reserved">© 2026 DJ Roger — Los Ángeles, CA · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLB(event)">
+  <button class="lb-close" onclick="closeLB(event)" aria-label="Cerrar">✕</button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<!-- ROBOT BAILARIN QUE BAILA AL SCROLL -->
+<img class="robot-scroll" id="robotScroll" src="img/robot-led.png" alt="" aria-hidden="true" />
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="wa-float" href="https://wa.me/12134542970" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.87 9.87 0 001.522 5.266l-.999 3.648 3.966-1.211zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Toggle idioma ES / EN
+  let lang='es';
+  // Guardar el texto en español original de cada elemento traducible
+  document.querySelectorAll('[data-en]').forEach(el=>{el.dataset.es=el.innerHTML;});
+  function toggleLang(){
+    lang = lang==='es' ? 'en' : 'es';
+    document.querySelectorAll('[data-en]').forEach(el=>{
+      el.innerHTML = lang==='en' ? el.dataset.en : el.dataset.es;
+    });
+    document.documentElement.lang = lang;
+    document.getElementById('langBtn').textContent = lang==='en' ? 'ES' : 'EN';
+  }
+
+  // Carrusel de galeria
+  function slideGal(dir){
+    const t=document.getElementById('galTrack');
+    const step=t.querySelector('figure').offsetWidth+16;
+    t.scrollBy({left:dir*step,behavior:'smooth'});
+  }
+  // Lightbox
+  function openLB(fig){
+    const img=fig.querySelector('img');
+    document.getElementById('lbImg').src=img.src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeLB(e){
+    if(e.target.id==='lbImg') return; // clic en la imagen no cierra
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lightbox').classList.remove('open'),document.body.style.overflow='';});
+
+  // Cerrar menu movil al tocar un enlace
+  document.querySelectorAll('#navRight a').forEach(a=>{
+    a.addEventListener('click',()=>document.getElementById('navRight').classList.remove('open'));
+  });
+
+  // Robot baila solo mientras se hace scroll
+  const robot=document.getElementById('robotScroll');
+  let danceTimer;
+  window.addEventListener('scroll',()=>{
+    robot.classList.add('dancing');
+    clearTimeout(danceTimer);
+    danceTimer=setTimeout(()=>robot.classList.remove('dancing'),200);
+  },{passive:true});
+</script>
+</body>
+</html>
