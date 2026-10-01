@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>DJ Roger — DJ, Sonido y Show de Robot LED | Los Ángeles</title>
-<meta name="description" content="DJ Roger: DJ profesional, sonido, luces, pantalla LED, nube baja, chispas frías y show de robot LED para quinceañeras, bodas y graduaciones en Los Ángeles, CA." />
+<meta name="description" content="DJ Roger: DJ profesional con música en español e inglés, sonido, luces, pantalla LED, nube baja, chispas frías y show de robot LED para quinceañeras, bodas, graduaciones y eventos corporativos en Los Ángeles, CA." />
 <link rel="icon" href="img/logo-djroger.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -216,6 +216,20 @@
   .socials a:hover{transform:translateY(-4px);border-color:var(--amarillo)}
   .socials svg{width:24px;height:24px}
 
+  /* ---------- FORM DISCRETO WHATSAPP ---------- */
+  .wa-form{max-width:440px;margin:34px auto 0;display:flex;flex-direction:column;gap:10px;text-align:left}
+  .wa-form .fhint{color:var(--gris);font-size:.82rem;text-align:center;margin-bottom:2px}
+  .wa-form .row{display:flex;gap:10px}
+  .wa-form .row input{flex:1}
+  .wa-form input,.wa-form textarea{
+    width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+    border-radius:10px;padding:12px 14px;color:#fff;font-family:inherit;font-size:.92rem;transition:.2s;resize:vertical}
+  .wa-form input::placeholder,.wa-form textarea::placeholder{color:#7a7a7a}
+  .wa-form input:focus,.wa-form textarea:focus{outline:none;border-color:var(--amarillo);background:rgba(255,255,255,.06)}
+  .wa-form .fbtns{display:flex;gap:10px;margin-top:4px}
+  .wa-form .fbtns .btn{flex:1;justify-content:center;padding:14px 18px}
+  @media(max-width:480px){.wa-form .row,.wa-form .fbtns{flex-direction:column}}
+
   footer{background:var(--negro);border-top:1px solid rgba(255,255,255,.06);padding:34px 0;text-align:center}
   footer img{height:40px;margin-bottom:14px}
   footer p{color:var(--gris);font-size:.85rem}
@@ -285,7 +299,7 @@
   <div class="wrap hero-inner">
     <span class="badge" data-en="+15 years of experience · Los Angeles, CA">+15 años de experiencia · Los Ángeles, CA</span>
     <h1 data-en='Your event with the <span class="r">best sound</span> and a <span class="y">robot show</span>'>Tu evento con el <span class="r">mejor sonido</span> y <span class="y">show de robot</span></h1>
-    <p data-en="Master of ceremonies, robot show, LED screen, cold sparks and high-quality sound. Specialists in quinceañeras and weddings — we make your night unforgettable.">Maestro de ceremonia, show de robot, pantalla LED, chispas frías y sonido de alta calidad. Especialistas en quinceañeras y bodas — hacemos que tu noche sea inolvidable.</p>
+    <p data-en="Master of ceremonies, robot show, LED screen, cold sparks and high-quality sound — with music in Spanish and English. Quinceañeras, weddings and corporate events: a first-class service that makes your night unforgettable.">Maestro de ceremonia, show de robot, pantalla LED, chispas frías y sonido de alta calidad — con música en español e inglés. Quinceañeras, bodas y eventos corporativos: un servicio de primera calidad que hace tu noche inolvidable.</p>
     <div class="hero-btns">
       <a class="btn btn-wa" href="https://wa.me/12134542970" target="_blank" rel="noopener">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="#04220f"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.87 9.87 0 001.522 5.266l-.999 3.648 3.966-1.211zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -301,10 +315,10 @@
   <div class="wrap">
     <div class="stitle reveal">
       <span data-en="What we offer">Lo que ofrecemos</span>
-      <h2 data-en='Complete <em>services</em> for your party'>Servicios <em>completos</em> para tu fiesta</h2>
+      <h2 data-en='Complete <em>services</em> for your event'>Servicios <em>completos</em> para tu evento</h2>
     </div>
     <div class="grid">
-      <div class="card reveal"><div class="ic">🎧</div><h3 data-en="DJ & MC">DJ & MC</h3><p data-en="Music for every genre and professional hosting with a microphone throughout your event.">Música para todos los géneros y animación profesional con micrófono durante todo el evento.</p></div>
+      <div class="card reveal"><div class="ic">🎧</div><h3 data-en="DJ & MC">DJ & MC</h3><p data-en="Music in Spanish and English for every genre, plus professional hosting with a microphone throughout your event.">Música en español e inglés para todos los géneros y animación profesional con micrófono durante todo el evento.</p></div>
       <div class="card reveal"><div class="ic">🔊</div><h3 data-en="Pro Sound">Sonido Pro</h3><p data-en="Pioneer gear and high-power speakers with crystal-clear sound for any hall or backyard.">Equipo Pioneer y bocinas de alta potencia con sonido cristalino para cualquier salón o jardín.</p></div>
       <div class="card reveal"><div class="ic">💡</div><h3 data-en="Lights & Effects">Luces & Efectos</h3><p data-en="Robotic lights, uplighting and lasers that transform the room to the beat of the music.">Luces robóticas, uplighting y láser que transforman el ambiente al ritmo de la música.</p></div>
       <div class="card reveal"><div class="ic">📺</div><h3 data-en="LED Screen">Pantalla LED</h3><p data-en="Giant custom screen with the name of the celebrant, photos and messages.">Pantalla gigante personalizada con el nombre del festejado, fotos y mensajes.</p></div>
@@ -349,8 +363,14 @@
     <div class="carousel reveal">
       <button class="arrow prev" onclick="slide('galTrack',-1)" aria-label="Anterior">‹</button>
       <div class="track" id="galTrack">
-        <figure onclick="openLB(this)"><img src="img/nube-baja-chispas-1.jpg" alt="Vals con nube baja" /></figure>
-        <figure onclick="openLB(this)"><img src="img/nube-baja-chispas-2.jpg" alt="Nube baja y chispas" /></figure>
+        <figure onclick="openLB(this)"><img src="img/salon-elegante-booth.jpg" alt="Montaje profesional de DJ en salón elegante" /></figure>
+        <figure onclick="openLB(this)"><img src="img/pantalla-led-roja.jpg" alt="Pantalla LED personalizada con iluminación" /></figure>
+        <figure onclick="openLB(this)"><img src="img/laser-evento-noche.jpg" alt="Show de láser en evento nocturno" /></figure>
+        <figure onclick="openLB(this)"><img src="img/nube-pista-dj.jpg" alt="Efecto de nube baja en la pista" /></figure>
+        <figure onclick="openLB(this)"><img src="img/montaje-dj-uplighting.jpg" alt="Montaje de DJ con uplighting" /></figure>
+        <figure onclick="openLB(this)"><img src="img/pantalla-led-vals.jpg" alt="Pantalla LED durante el vals" /></figure>
+        <figure onclick="openLB(this)"><img src="img/pista-llena-fiesta.jpg" alt="Pista llena con luces e invitados" /></figure>
+        <figure onclick="openLB(this)"><img src="img/nube-baja-chispas-1.jpg" alt="Vals con nube baja y chispas frías" /></figure>
         <figure onclick="openLB(this)"><img src="img/quinceanera-rosa-pista.jpg" alt="Quinceañera en la pista" /></figure>
         <figure onclick="openLB(this)"><img src="img/pantalla-led-graduacion.jpg" alt="Pantalla LED personalizada" /></figure>
         <figure onclick="openLB(this)"><img src="img/montaje-sonido-salon.jpg" alt="Montaje de sonido" /></figure>
@@ -371,6 +391,11 @@
     <div class="carousel reveal">
       <button class="arrow prev" onclick="slide('vidTrack',-1)" aria-label="Anterior">‹</button>
       <div class="track-vid" id="vidTrack">
+        <div class="vslide"><video src="video/evento-corporativo-salon.mp4" controls playsinline preload="metadata"></video></div>
+        <div class="vslide"><video src="video/pantalla-led-nombre.mp4" controls playsinline preload="metadata"></video></div>
+        <div class="vslide"><video src="video/luces-led-show.mp4" controls playsinline preload="metadata"></video></div>
+        <div class="vslide"><video src="video/laser-pista-baile.mp4" controls playsinline preload="metadata"></video></div>
+        <div class="vslide"><video src="video/setup-dj-booth.mp4" controls playsinline preload="metadata"></video></div>
         <div class="vslide"><video src="video/pantalla-led.mp4" controls playsinline preload="metadata"></video></div>
         <div class="vslide"><video src="video/fiesta-laser.mp4" controls playsinline preload="metadata"></video></div>
         <div class="vslide"><video src="video/evento-jardin.mp4" controls playsinline preload="metadata"></video></div>
@@ -394,6 +419,27 @@
         <span data-en="Message us on WhatsApp">Escríbenos por WhatsApp</span>
       </a>
       <div class="phone">+1 (213) 454-2970</div>
+
+      <form class="wa-form reveal" onsubmit="return sendWA(event)">
+        <p class="fhint" data-en="Or leave your details and we'll reply on WhatsApp">O déjanos tus datos y te contestamos por WhatsApp</p>
+        <div class="row">
+          <input id="wfName" type="text" required placeholder="Nombre" data-es-ph="Nombre" data-en-ph="Name" />
+          <input id="wfDate" type="text" placeholder="Fecha del evento" data-es-ph="Fecha del evento" data-en-ph="Event date" />
+        </div>
+        <input id="wfType" type="text" placeholder="Tipo de evento (boda, corporativo…)" data-es-ph="Tipo de evento (boda, corporativo…)" data-en-ph="Event type (wedding, corporate…)" />
+        <textarea id="wfMsg" rows="2" placeholder="Mensaje (opcional)" data-es-ph="Mensaje (opcional)" data-en-ph="Message (optional)"></textarea>
+        <div class="fbtns">
+          <button class="btn btn-wa" type="submit">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#04220f"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.87 9.87 0 001.522 5.266l-.999 3.648 3.966-1.211zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span data-en="Send on WhatsApp">Enviar por WhatsApp</span>
+          </button>
+          <button class="btn btn-ghost" type="button" onclick="sendSMS()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-en="Send by text">Enviar por texto</span>
+          </button>
+        </div>
+      </form>
+
       <div class="socials">
         <a href="https://www.facebook.com/roger.larios.353" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -446,8 +492,34 @@
     document.querySelectorAll('[data-en]').forEach(el=>{
       el.innerHTML = lang==='en' ? el.dataset.en : el.dataset.es;
     });
+    document.querySelectorAll('[data-en-ph]').forEach(el=>{
+      el.placeholder = lang==='en' ? el.dataset.enPh : el.dataset.esPh;
+    });
     document.documentElement.lang = lang;
     document.getElementById('langBtn').textContent = lang==='en' ? 'ES' : 'EN';
+  }
+
+  // Formulario discreto -> arma el mensaje y lo manda por WhatsApp o texto (SMS)
+  function buildMsg(){
+    const v=id=>document.getElementById(id).value.trim();
+    const n=v('wfName'), d=v('wfDate'), t=v('wfType'), m=v('wfMsg');
+    const en = lang==='en';
+    let txt = en ? 'Hi DJ Roger, I want information about my event.' : 'Hola DJ Roger, quiero información para mi evento.';
+    if(n) txt += (en?'\nName: ':'\nNombre: ')+n;
+    if(t) txt += (en?'\nEvent: ':'\nEvento: ')+t;
+    if(d) txt += (en?'\nDate: ':'\nFecha: ')+d;
+    if(m) txt += (en?'\nMessage: ':'\nMensaje: ')+m;
+    return txt;
+  }
+  function sendWA(e){
+    e.preventDefault();
+    window.open('https://wa.me/12134542970?text='+encodeURIComponent(buildMsg()),'_blank');
+    return false;
+  }
+  function sendSMS(){
+    const form=document.querySelector('.wa-form');
+    if(!form.reportValidity()) return;   // respeta el campo Nombre requerido
+    window.location.href='sms:+12134542970?&body='+encodeURIComponent(buildMsg());
   }
 
   // Carrusel (fotos y videos): avanza exactamente un item por clic
